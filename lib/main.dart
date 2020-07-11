@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/screens/MainView.dart';
 
 void main() {
   runApp(TravelApp());
@@ -7,6 +8,8 @@ void main() {
 class TravelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      home: MainView(),
+    );
   }
 }
