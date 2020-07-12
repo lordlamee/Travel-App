@@ -3,17 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/constants.dart';
 import 'package:travel_app/widgets.dart';
 
-class Description extends StatefulWidget {
+class Description extends StatelessWidget {
   Description({this.imagePath, this.placeName});
 
   final String imagePath;
   final String placeName;
 
-  @override
-  _DescriptionState createState() => _DescriptionState();
-}
-
-class _DescriptionState extends State<Description> {
   @override
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
@@ -23,7 +18,7 @@ class _DescriptionState extends State<Description> {
         constraints: BoxConstraints.tight(screenSize),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(widget.imagePath ?? 'assets/maldives.png'),
+            image: AssetImage(imagePath ?? 'assets/maldives.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -82,27 +77,23 @@ class _DescriptionState extends State<Description> {
                         ),
                       ),
                     ),
-                    SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(16, 0, 16, 30),
-                            child: Text(
-                              widget.placeName ?? 'Maldives',
-                              style: GoogleFonts.sourceSansPro(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Text(
-                              ' Cras gravida bibendum dolor eu varius. Morbi fermentum velit nisl, eget vehicula lorem sodales eget. Donec quis volutpat orci. Sed ipsum felis, tristique id egestas et, convallis ac velit. In consequat dolor libero, nec luctus orci rutrum nec. Phasellus vel arcu sed nibh ornare accumsan. Vestibulum in elementum erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean laoreet rhoncus ipsum eget tempus. Praesent convallis fermentum sagittis.',
-                            style: GoogleFonts.sourceSansPro(),),
-                          ),
-                        ],
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 30),
+                      child: Text(
+                        placeName ?? 'Maldives',
+                        style: GoogleFonts.sourceSansPro(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(
+                          ' Cras gravida bibendum dolor eu varius. Morbi fermentum velit nisl, eget vehicula lorem sodales eget. Donec quis volutpat orci. Sed ipsum felis, tristique id egestas et, convallis ac velit. In consequat dolor libero, nec luctus orci rutrum nec. Phasellus vel arcu sed nibh ornare accumsan. Vestibulum in elementum erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean laoreet rhoncus ipsum eget tempus. Praesent convallis fermentum sagittis.',
+                          style: GoogleFonts.sourceSansPro(),
+                        ),
                       ),
                     ),
                   ],

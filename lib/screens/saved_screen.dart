@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/constants.dart';
-import 'package:travel_app/screens/DescriptionScreen.dart';
+import 'package:travel_app/screens/description_screen.dart';
 import 'package:travel_app/widgets.dart';
 
 class SavedScreen extends StatelessWidget {

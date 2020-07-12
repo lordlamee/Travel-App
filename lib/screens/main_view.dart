@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/screens/HomeScreen.dart';
-import 'package:travel_app/screens/SavedScreen.dart';
-import 'package:travel_app/screens/TripsScreen.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:travel_app/screens/home_screen.dart';
+import 'package:travel_app/screens/saved_screen.dart';
+import 'package:travel_app/screens/trips_screen.dart';
 import 'package:travel_app/widgets.dart';
+
 List pages = [
   HomeScreen(),
   SavedScreen(),
@@ -10,19 +12,19 @@ List pages = [
   Container(),
 ];
 int selectedIndex = 0;
+
 class MainView extends StatefulWidget {
   @override
   _MainViewState createState() => _MainViewState();
 }
 
 class _MainViewState extends State<MainView> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
@@ -34,13 +36,19 @@ class _MainViewState extends State<MainView> {
         unselectedIconTheme: IconThemeData(color: Color(0xFF989DC2)),
         items: [
           BottomNavigationBarItem(
-            icon: homeIcon,
-            title: Text('Home'),
+            icon: Icon(FlutterIcons.home_ant),
+            title: SizedBox(),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border), title: Text('Favorite')),
-          BottomNavigationBarItem(icon: mapIcon, title: Text('Description')),
-          BottomNavigationBarItem(icon: profileIcon, title: Text('Profile'))
+              icon: Icon(Icons.favorite_border), title: SizedBox()),
+          BottomNavigationBarItem(
+            icon: Icon(FlutterIcons.map_outline_mco),
+            title: SizedBox(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(FlutterIcons.person_outline_mdi),
+            title: SizedBox(),
+          ),
         ],
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/constants.dart';
-import 'package:travel_app/screens/DescriptionScreen.dart';
+import 'package:travel_app/screens/description_screen.dart';
 import 'package:travel_app/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.only(top: 80),
+      padding: EdgeInsets.only(top: screenSize.height * 0.113),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -66,12 +66,14 @@ class ImageCard extends StatelessWidget {
           child: InkResponse(
             onTap: () {
               Navigator.push(
-                  context,
-                  CupertinoPageRoute(
-                      builder: (context) => Description(
-                            imagePath: imagePath,
-                            placeName: name,
-                          )));
+                context,
+                CupertinoPageRoute(
+                  builder: (context) => Description(
+                    imagePath: imagePath,
+                    placeName: name,
+                  ),
+                ),
+              );
             },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 10),
@@ -103,7 +105,7 @@ class ImageCard extends StatelessWidget {
             style: GoogleFonts.sourceSansPro(
                 fontWeight: FontWeight.bold, fontSize: 18),
           ),
-        )
+        ),
       ],
     );
   }

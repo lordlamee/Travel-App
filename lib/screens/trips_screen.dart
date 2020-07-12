@@ -65,10 +65,12 @@ class TripCard extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(
-                          '${placeName ?? 'Maldives'} 5 days trip',
-                          style: GoogleFonts.sourceSansPro(
-                              fontWeight: FontWeight.bold, fontSize: 20),
+                        Expanded(
+                          child: Text(
+                            '${placeName ?? 'Maldives'} 5 days trip',
+                            style: GoogleFonts.sourceSansPro(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          ),
                         ),
                         Align(
                           alignment: Alignment.topRight,
