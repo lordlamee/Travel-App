@@ -36,17 +36,17 @@ class _MainViewState extends State<MainView> {
         unselectedIconTheme: IconThemeData(color: Color(0xFF989DC2)),
         items: [
           BottomNavigationBarItem(
-            icon: Icon(FlutterIcons.home_ant),
+            icon: Icon(Feather.home),
             title: SizedBox(),
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border), title: SizedBox()),
+              icon: Icon(Feather.heart), title: SizedBox()),
           BottomNavigationBarItem(
-            icon: Icon(FlutterIcons.map_outline_mco),
+            icon: Icon(Feather.map),
             title: SizedBox(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(FlutterIcons.person_outline_mdi),
+            icon: Icon(Feather.user),
             title: SizedBox(),
           ),
         ],
