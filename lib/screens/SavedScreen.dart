@@ -1,16 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/constants.dart';
 import 'package:travel_app/screens/DescriptionScreen.dart';
 import 'package:travel_app/widgets.dart';
-
-List<String> imagesPath = [
-  'assets/maldives.png',
-  'assets/singapore.png',
-  'assets/brazil.png',
-  'assets/bali.png'
-];
-List<String> placeNames = ['Maldives', 'Singapore', 'Brazil', 'Bali'];
 
 class SavedScreen extends StatelessWidget {
   @override
@@ -81,7 +74,12 @@ class TravelCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(name),
+                    Text(
+                      name,
+                      style: GoogleFonts.sourceSansPro(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     Icon(
                       Icons.favorite,
                       color: Colors.red,
@@ -92,7 +90,9 @@ class TravelCard extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                    'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat')
+                  'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat',
+                  style: GoogleFonts.sourceSansPro(),
+                )
               ],
             ),
           )

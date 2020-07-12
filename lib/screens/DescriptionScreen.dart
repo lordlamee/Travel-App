@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travel_app/constants.dart';
 import 'package:travel_app/widgets.dart';
 
@@ -89,7 +90,7 @@ class _DescriptionState extends State<Description> {
                             padding: const EdgeInsets.fromLTRB(16, 0, 16, 30),
                             child: Text(
                               widget.placeName ?? 'Maldives',
-                              style: TextStyle(
+                              style: GoogleFonts.sourceSansPro(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -99,7 +100,7 @@ class _DescriptionState extends State<Description> {
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Text(
                               ' Cras gravida bibendum dolor eu varius. Morbi fermentum velit nisl, eget vehicula lorem sodales eget. Donec quis volutpat orci. Sed ipsum felis, tristique id egestas et, convallis ac velit. In consequat dolor libero, nec luctus orci rutrum nec. Phasellus vel arcu sed nibh ornare accumsan. Vestibulum in elementum erat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean laoreet rhoncus ipsum eget tempus. Praesent convallis fermentum sagittis.',
-                            ),
+                            style: GoogleFonts.sourceSansPro(),),
                           ),
                         ],
                       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ImageIcon notificationIcon = ImageIcon(AssetImage('assets/notification.png'));
 ImageIcon profileIcon = ImageIcon(
@@ -7,6 +8,7 @@ ImageIcon profileIcon = ImageIcon(
 );
 ImageIcon homeIcon = ImageIcon(AssetImage('assets/homeIcon.png'));
 ImageIcon mapIcon = ImageIcon(AssetImage('assets/mapIcon.png'));
+ImageIcon calendarIcon = ImageIcon(AssetImage('assets/calendaricon.png'),color: Color(0xFF2B3273),);
 
 class SearchField extends StatelessWidget {
   SearchField({this.hintText = 'Search'});
@@ -25,6 +27,9 @@ class SearchField extends StatelessWidget {
               color: Colors.black,
             ),
             hintText: hintText,
+            hintStyle: GoogleFonts.sourceSansPro(
+              color: Colors.black,
+            ),
             filled: true,
             fillColor: Colors.white,
             border: OutlineInputBorder(
@@ -49,7 +54,7 @@ class RowHeading extends StatelessWidget {
       children: <Widget>[
         Text(
           heading,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          style: GoogleFonts.sourceSansPro(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         NotificationIcon(),
       ],
