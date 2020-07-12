@@ -39,7 +39,9 @@ class HomeScreen extends StatelessWidget {
                     imagePath: 'assets/bali.png',
                     name: 'Bali',
                   ),
-                  ImageCard(),
+                  ImageCard(
+                    name: 'Maldives',
+                  ),
                   ImageCard(
                     imagePath: 'assets/brazil.png',
                     name: 'Brazil',
@@ -75,23 +77,26 @@ class ImageCard extends StatelessWidget {
                 ),
               );
             },
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                image: DecorationImage(
-                  image: AssetImage(imagePath),
-                  fit: BoxFit.fill,
+            child: Hero(
+              tag: name ?? 'Maldives',
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    image: AssetImage(imagePath),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              child: Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
-                  child: Icon(
-                    Icons.favorite_border,
-                    color: Colors.white,
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 15, vertical: 30),
+                    child: Icon(
+                      Icons.favorite_border,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
